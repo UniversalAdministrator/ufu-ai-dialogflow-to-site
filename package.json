@@ -1,0 +1,32 @@
+al-{
+  "name": "universal-flow-university",
+  "version": "1.0.0",
+  "description": "UfU webhook for DialogFlow",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/universaladministrator/ufu.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "UfU",
+    "webhook",
+    "DialogFlow"
+  ],
+  "author": "RUniversal Flow University <at.universalflowuniversity@gmail.com> (https://universalflowuniversity.com)",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  },
+  "engines": {
+    "node": "8.1.4"
+  },
+  "bugs": {
+    "url": "https://github.com/universaladministrator/ufu/issues"
+  },
+  "homepage": "https://github.com/universaladministrator/ufu#readme",
+  "devDependencies": {}
+}

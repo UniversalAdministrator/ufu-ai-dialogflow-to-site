@@ -1,0 +1,6 @@
+al{
+  "name": "universal-flow-university",
+  "description": "UfU Webhook for Dialogflow",
+  "repository": "https://github.com/universaladministrator/ufu",
+  "keywords": ["UfU", "webhook", "post"]
+}
