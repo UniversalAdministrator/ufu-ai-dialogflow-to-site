@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const wordpress = require('./lib/wordpress');
+const wordpress = require('./lib/wordpress.js');
 
 const port = process.env.PORT || 5000;
 
@@ -18,13 +18,13 @@ app.post('/webhook', (req, res, next) => {
             res.status(400).send({
                 speech: errorMessage,
                 displayText: errorMessage,
-                source: 'wp-webhook',
+                source: 'webhook',
             });
         } else {
             res.status(200).send({
                 speech: '',
                 displayText: '',
-                source: 'wp-webhook',
+                source: 'webhook',
                 messages: postContent
             });
         }
