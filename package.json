@@ -15,7 +15,7 @@
     "webhook",
     "DialogFlow"
   ],
-  "author": "RUniversal Flow University <at.universalflowuniversity@gmail.com> (https://universalflowuniversity.com)",
+  "author": "Universal Flow University <at.universalflowuniversity@gmail.com> (https://universalflowuniversity.com)",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
