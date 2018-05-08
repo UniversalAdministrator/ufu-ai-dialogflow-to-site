@@ -4,7 +4,7 @@ al-{
   "description": "UfU webhook for DialogFlow",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/universaladministrator/ufu.git"
+    "url": "git+https://github.com/UniversalAdministrator/ufu-ai-dialogflow-to-site.git"
   },
   "main": "index.js",
   "scripts": {
@@ -25,8 +25,8 @@ al-{
     "node": "8.1.4"
   },
   "bugs": {
-    "url": "https://github.com/universaladministrator/ufu/issues"
+    "url": "https://github.com/UniversalAdministrator/ufu-ai-dialogflow-to-site/issues"
   },
-  "homepage": "https://github.com/universaladministrator/ufu#readme",
+  "homepage": "https://github.com/UniversalAdministrator/ufu-ai-dialogflow-to-site#readme",
   "devDependencies": {}
 }
