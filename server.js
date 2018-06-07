@@ -1,6 +1,7 @@
 // Modules
 const express = require('express');
 const bodyParser = require('body-parser');
+const wordpress = require('./lib/wordpress/wordpress');
 
 // Set port for server
 const port = process.env.PORT || 3100;
@@ -9,17 +10,24 @@ const port = process.env.PORT || 3100;
 let app = express();
 app.use(bodyParser.json());
 
+ let action = req.body.result.action;
+    let tag = req.body.result.parameters.tags;
 
-
-app.post('/webhook', (req, res, next) => {
-
-    let action = req.body.result.action;
-    let message = action === 'get.wp.content' ? `Hey, our webhook is connected!` : `Sorry, I didn't get that`;
-
-    res.send({
-        speech: message,
-        displayText: message,
-        source: 'wp-webhook',
+    wordpress.getPosts(tag, (errorMessage, postContent) => {
+        if (errorMessage) {
+            res.status(400).send({
+                speech: errorMessage,
+                displayText: errorMessage,
+                source: 'wp-webhook',
+            });
+        } else {
+            res.status(200).send({
+                speech: '',
+                displayText: '',
+                source: 'wp-webhook',
+                messages: postContent
+            });
+        }
     });
 
 });
@@ -27,6 +35,4 @@ app.post('/webhook', (req, res, next) => {
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
-
-
 
