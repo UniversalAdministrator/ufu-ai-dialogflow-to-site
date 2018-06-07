@@ -6,9 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/UniversalAdministrator/ufu-ai-dialogflow-to-site.git"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "keywords": [
     "UfU",
