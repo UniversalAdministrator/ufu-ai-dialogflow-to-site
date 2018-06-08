@@ -1,6 +1,7 @@
 // Modules
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const wordpress = require('./lib/wordpress');
 
 // Set port for server
@@ -9,8 +10,9 @@ const port = process.env.PORT || 3100;
 // Express set up
 let app = express();
 app.use(bodyParser.json());
+app.post('/webhook', (req, res, next) => {
 
- let action = req.body.result.action;
+    let action = req.body.result.action;
     let tag = req.body.result.parameters.tags;
 
     wordpress.getPosts(tag, (errorMessage, postContent) => {
@@ -35,4 +37,3 @@ app.use(bodyParser.json());
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 });
-
