@@ -10,26 +10,16 @@ const port = process.env.PORT || 3100;
 // Express set up
 let app = express();
 app.use(bodyParser.json());
+
 app.post('/webhook', (req, res, next) => {
 
     let action = req.body.result.action;
-    let tag = req.body.result.parameters.tags;
+    let message = action === 'get.wp.content' ? `Hey, our webhook is connected!` : `Sorry, I didn't get that`;
 
-    wordpress.getPosts(tag, (errorMessage, postContent) => {
-        if (errorMessage) {
-            res.status(400).send({
-                speech: errorMessage,
-                displayText: errorMessage,
-                source: 'wp-webhook',
-            });
-        } else {
-            res.status(200).send({
-                speech: '',
-                displayText: '',
-                source: 'wp-webhook',
-                messages: postContent
-            });
-        }
+    res.send({
+        speech: message,
+        displayText: message,
+        source: 'wp-webhook',
     });
 
 });
